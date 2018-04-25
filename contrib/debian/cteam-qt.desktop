@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=cteam
+Comment=cteam P2P Cryptocurrency
+Comment[fr]=cteam, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=cteam, eşten eşe kriptografik sanal para birimi
+Exec=cteam-qt %u
+Terminal=false
+Type=Application
+Icon=cteam128
+MimeType=x-scheme-handler/cteam;
+Categories=Office;Finance;
