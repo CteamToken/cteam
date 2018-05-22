@@ -41,7 +41,7 @@ The following are developer notes on how to build CTEAM on your native platform.
 
 Development
 ---------------------
-The cteam repo's [root README](https://github.com/CteamToken/cteam/cteam/blob/master/README.md) contains relevant information on the development process and automated testing.
+The cteam repo's [root README](https://github.com/CteamToken/cteam/blob/master/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)

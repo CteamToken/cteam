@@ -1,5 +1,5 @@
 ---
-name: "cteam-osx-1.0.0.0"
+name: "cteam-osx-1.1.0.0"
 enable_cache: true
 suites:
 - "trusty"

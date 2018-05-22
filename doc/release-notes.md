@@ -2,14 +2,14 @@
 
 CTEAM version *version* is now available from:
 
-  <https://github.com/CteamToken/cteam/cteam/releases>
+  <https://github.com/CteamToken/cteam/releases>
 
 This is a new major version release, including various bug fixes and
 performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/CteamToken/cteam/cteam/issues>
+  <https://github.com/CteamToken/cteam/issues>
 
 Compatibility
 ==============

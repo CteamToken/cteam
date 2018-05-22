@@ -1616,12 +1616,17 @@ int64_t GetBlockValue(int nHeight, CAmount nFees, bool fBudgetBlock)
     if (!fBudgetBlock)
         nBudgetMultiplier = COIN - (Params().GetBudgetPercent() * CENT);
 
-    CAmount nSubsidy = 10 * nBudgetMultiplier; // Default PoS reward
-    if (nHeight == 1)
-        return CAmount(777777777) * COIN;
-	else if (nHeight > 1 && nHeight <= Params().LAST_POW_BLOCK())
-         return CAmount(10) * COIN; // Low PoW block reward to help up the network	
-        
+
+    CAmount nSubsidy;
+
+    if (nHeight < 999){
+        return CAmount(777777.777) * COIN; // first 1000 PoW blocks = 777777.777 per block to help split coins for staking
+    } else if (nHeight >= 999 && nHeight <= Params().LAST_POW_BLOCK()){
+        return CAmount(10) * COIN; // Low PoW block reward to help up the network
+    } else {
+        nSubsidy = 10 * nBudgetMultiplier; // Default PoS reward
+    }
+
     return nSubsidy + nFees;
 }
 
@@ -4567,7 +4572,11 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
             return true;
         }
 
-
+		// enforce minimum protocol version on network
+		if (pfrom->nVersion < MIN_PROTOCOL_VERSION) {
+			LogPrintf("Diconnect old protocol version wallet, Peer protocol version: \n");
+            pfrom->fDisconnect = true;
+		}
 
 
 
