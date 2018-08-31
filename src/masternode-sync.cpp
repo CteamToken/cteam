@@ -26,13 +26,13 @@ CMasternodeSync::CMasternodeSync()
 }
 
 bool CMasternodeSync::IsSynced()
-{
+{ 
     return RequestedMasternodeAssets == MASTERNODE_SYNC_FINISHED;
 }
 
 bool CMasternodeSync::IsBlockchainSynced()
 {
-    // pushing this so the wallet thinks we are synced here.
+    // pushing this so the wallet thinks we are synced here.-
     return true;
     
     static bool fBlockchainSynced = false;
