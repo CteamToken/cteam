@@ -1,5 +1,6 @@
 // Copyright (c) 2014-2016 The Dash developers
-// Copyright (c) 2016-2017 The Christian Team developers
+// Copyright (c) 2017-2018 The PIVX Core Developers
+// Copyright (c) 2018 The Christian Team developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -117,7 +118,7 @@ public:
     int GetSporkIDByName(std::string strName);
     bool UpdateSpork(int nSporkID, int64_t nValue);
     bool SetPrivKey(std::string strPrivKey);
-    bool CheckSignature(CSporkMessage& spork);
+    bool CheckSignature(CSporkMessage& spork, bool fCheckSigner = false);
     bool Sign(CSporkMessage& spork);
     void Relay(CSporkMessage& msg);
 };

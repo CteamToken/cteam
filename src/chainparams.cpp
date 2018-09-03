@@ -1,7 +1,8 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The Christian Team developers
+// Copyright (c) 2017-2018 The PIVX Core Developers
+// Copyright (c) 2018 The Christian Team developers
 // Copyright (c) 2017 The ColossusCoinXT developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -157,7 +158,10 @@ public:
         nMinStakeAge = 60*60*8; // 8 Hours
         nMasternodeRewardPercent = 60; // % of block reward that goes to masternodes
         nRequiredMasternodeCollateral = 5000 * COIN;
-
+        //Change of spork keys
+        nEnforceNewSporkKey = 1535650481;
+        nRejectOldSporkKey = 1535650481;
+        
         const char* pszTimestamp = "BBC News 19-04-2018: Nasa's Tess: Planet-hunting satellite lifts off";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
@@ -181,10 +185,12 @@ public:
         assert(genesis.hashMerkleRoot == uint256("8a78a52f1a46e0bba46e2009c75ef14f6436f2f30c6640c0c3d91aec7a1c0ccf"));
 
 
-        //vFixedSeeds.clear();
-        //vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("seed1.christian.team", "seed1.christian.team"));
-        vSeeds.push_back(CDNSSeedData("seed2.christian.team", "seed2.christian.team"));
+        //add the necessary seed nodes for clients to connect to
+        vSeeds.push_back(CDNSSeedData("216.196.217.106", "216.196.217.106"));
+        vSeeds.push_back(CDNSSeedData("216.196.217.107", "216.196.217.107"));
+        vSeeds.push_back(CDNSSeedData("216.196.217.108", "216.196.217.108"));
+        vSeeds.push_back(CDNSSeedData("216.196.217.109", "216.196.217.109"));
+        vSeeds.push_back(CDNSSeedData("216.196.217.110", "216.196.217.110"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 0x17);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 0x76);
@@ -208,7 +214,8 @@ public:
 
         nPoolMaxTransactions = 3;
 
-        strSporkKey = "04B433E6598390C992F4F022F20D3B4CBBE691652EE7C48243B81701CBDB7CC7D7BF0EE09E154E6FCBF2043D65AF4E9E97B89B5DBAF830D83B9B7F469A6C45A717";
+        strSporkKey = "0473446a79e9f0f2d3bf475b33b72c9d2d95de92bcb9c0f044c83d11d3cd6396612e640941fe1e30927740683d1d177e79aff3547cc2ea2dc443596d3f93d4d5a3";
+        strSporkKeyOld = "04B433E6598390C992F4F022F20D3B4CBBE691652EE7C48243B81701CBDB7CC7D7BF0EE09E154E6FCBF2043D65AF4E9E97B89B5DBAF830D83B9B7F469A6C45A717";
         strObfuscationPoolDummyAddress = "D87q2gC9j6nNrnzCsg4aY6bHMLsT9nUhEw";
         nStartMasternodePayments = 1403728576; //Wed, 25 Jun 2014 20:36:16 GMT
     }
@@ -247,7 +254,10 @@ public:
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 0; //approx Mon, 17 Apr 2017 04:00:00 GMT
         nMaxMoneyOut = 1200000000 * COIN;
-
+        //Change of spork keys
+        nEnforceNewSporkKey = 1535650481;
+        nRejectOldSporkKey = 1535650481;
+        
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = fGenTime;
         genesis.nNonce = 9093903;
@@ -282,7 +292,8 @@ public:
         fTestnetToBeDeprecatedFieldRPC = true;
 
         nPoolMaxTransactions = 2;
-        strSporkKey = "04348C2F50F90267E64FACC65BFDC9D0EB147D090872FB97ABAE92E9A36E6CA60983E28E741F8E7277B11A7479B626AC115BA31463AC48178A5075C5A9319D4A38";
+        strSporkKey = "0473446a79e9f0f2d3bf475b33b72c9d2d95de92bcb9c0f044c83d11d3cd6396612e640941fe1e30927740683d1d177e79aff3547cc2ea2dc443596d3f93d4d5a3";
+        strSporkKeyOld = "04348C2F50F90267E64FACC65BFDC9D0EB147D090872FB97ABAE92E9A36E6CA60983E28E741F8E7277B11A7479B626AC115BA31463AC48178A5075C5A9319D4A38";
         strObfuscationPoolDummyAddress = "y57cqfGRkekRyDRNeJiLtYVEbvhXrNbmox";
         nStartMasternodePayments = 1420837558; //Fri, 09 Jan 2015 21:05:58 GMT
     }
