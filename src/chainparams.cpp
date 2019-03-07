@@ -161,7 +161,7 @@ public:
         //Change of spork keys
         nEnforceNewSporkKey = 1535650481;
         nRejectOldSporkKey = 1535650481;
-        
+
         const char* pszTimestamp = "BBC News 19-04-2018: Nasa's Tess: Planet-hunting satellite lifts off";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
@@ -178,7 +178,7 @@ public:
         genesis.nNonce = 6048180;
 
         hashGenesisBlock = genesis.GetHash();
-        
+
 	// MineGenesis(genesis);
 
         assert(hashGenesisBlock == uint256("00000176d99ba593e22957abe48c081d3b94c7bfc26b9448e1c7c7fc075315b2"));
@@ -186,11 +186,8 @@ public:
 
 
         //add the necessary seed nodes for clients to connect to
-        vSeeds.push_back(CDNSSeedData("216.196.217.106", "216.196.217.106"));
-        vSeeds.push_back(CDNSSeedData("216.196.217.107", "216.196.217.107"));
-        vSeeds.push_back(CDNSSeedData("216.196.217.108", "216.196.217.108"));
-        vSeeds.push_back(CDNSSeedData("216.196.217.109", "216.196.217.109"));
-        vSeeds.push_back(CDNSSeedData("216.196.217.110", "216.196.217.110"));
+        vSeeds.push_back(CDNSSeedData("cteam-seed.mergeseeders.com", "cteam-seed.mergeseeders.com"));
+        vSeeds.push_back(CDNSSeedData("cteam-seed.mergeseeders.org", "cteam-seed.mergeseeders.org"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 0x17);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 0x76);
@@ -257,17 +254,17 @@ public:
         //Change of spork keys
         nEnforceNewSporkKey = 1535650481;
         nRejectOldSporkKey = 1535650481;
-        
+
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = fGenTime;
         genesis.nNonce = 9093903;
 
 	//MineGenesis(genesis);
-        
+
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("00000d49336370af05a0b3dd7bf16a4bf580a4e2311178a75377b1813f86b6d0"));
         assert(genesis.hashMerkleRoot == uint256("8a78a52f1a46e0bba46e2009c75ef14f6436f2f30c6640c0c3d91aec7a1c0ccf"));
-        
+
         vFixedSeeds.clear();
         vSeeds.clear();
 
@@ -332,12 +329,12 @@ public:
         genesis.nBits = 0x207fffff;
         genesis.nNonce = 12350;
 
-        
+
 	//MineGenesis(genesis);
 	hashGenesisBlock = genesis.GetHash();
 	assert(hashGenesisBlock == uint256("6915a5ff8705e85a24f07f9498dd950a550e20f590f7b3f46f04b3fe47080381"));
         assert(genesis.hashMerkleRoot == uint256("8a78a52f1a46e0bba46e2009c75ef14f6436f2f30c6640c0c3d91aec7a1c0ccf"));
-        
+
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds.
 
